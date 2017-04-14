@@ -1,0 +1,57 @@
+From 3acef3aed500d4abd2b8095fe8d80e55654f630e Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimoc@gnome.org>
+Date: Sat, 11 Mar 2017 22:55:58 -0800
+Subject: [PATCH] Config: use XDG_CONFIG_HOME for configuration
+
+When set, otherwise fall back to the previous behavior.
+---
+ src/Config.cpp | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+diff --git a/src/Config.cpp b/src/Config.cpp
+index 6bda90b..0016db8 100644
+--- a/src/Config.cpp
++++ b/src/Config.cpp
+@@ -147,12 +147,15 @@ void Config::destroy()
+ const char* Config::getFileName()
+ {
+ 	static char	configFilename[256];
+-	const char *homeDir = getenv("HOME");
++	const char *baseDir = getenv("XDG_CONFIG_HOME");
+ 
+-	if(!homeDir)
+-		homeDir = "./";
++	if (!baseDir)
++		getenv("HOME");
++
++	if(!baseDir)
++		baseDir = "./";
+ 
+-	sprintf(configFilename, "%s/%s", homeDir, CONFIG_FILE);
++	sprintf(configFilename, "%s/%s", baseDir, CONFIG_FILE);
+ 	alterPathForPlatform(configFilename);
+ 	return configFilename;
+ }
+@@ -265,12 +268,15 @@ bool Config::saveFile()
+ 	bool retVal;
+ 	char	configFilename[256];
+ 	FILE	*file;
+-	const char *homeDir = getenv("HOME");
++	const char *baseDir = getenv("XDG_CONFIG_HOME");
+ 
+-	if(!homeDir)
+-		homeDir = "./";
++	if (!baseDir)
++		getenv("HOME");
++
++	if(!baseDir)
++		baseDir = "./";
+ 
+-	sprintf(configFilename, "%s/%s", homeDir, CONFIG_FILE);
++	sprintf(configFilename, "%s/%s", baseDir, CONFIG_FILE);
+ 	alterPathForPlatform(configFilename);
+ 	file = fopen(configFilename, "w");
+ 	if(file)
+-- 
+2.12.0
+

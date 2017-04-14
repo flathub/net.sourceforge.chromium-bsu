@@ -1,0 +1,68 @@
+{
+    "app-id": "net.sourceforge.chromium-bsu",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.4",
+    "sdk": "org.freedesktop.Sdk",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=pulseaudio"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/aclocal",
+        "/share/man",
+        "*.la", "*.a"
+    ],
+    "rename-appdata-file": "chromium-bsu.appdata.xml",
+    "rename-desktop-file": "chromium-bsu.desktop",
+    "rename-icon": "chromium-bsu",
+    "modules": [
+        {
+            "name": "glu",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.0.tar.bz2",
+                    "sha256": "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
+                }
+            ]
+        },
+        {
+            "name": "ftgl",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/ftgl/FTGL%20Source/2.1.3~rc5/ftgl-2.1.3-rc5.tar.gz",
+                    "sha256": "5458d62122454869572d39f8aa85745fc05d5518001bcefa63bd6cbb8d26565b"
+                }
+            ]
+        },
+        {
+            "name": "chromium-bsu",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/chromium-bsu/Chromium%20B.S.U.%20source%20code/chromium-bsu-0.9.16.1.tar.gz",
+                    "sha256": "a1c141a34d19a59607ae81166a19864eb8c84cf86b155462fed31a6d56e1624a"
+                },
+                {
+                    "type": "patch",
+                    "path": "chromium-bsu-Config-use-XDG_CONFIG_HOME-for-configuration.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "chromium-bsu.appdata.xml"
+                }
+            ],
+            "post-install": [
+                "mkdir -p /app/share/appdata",
+                "cp chromium-bsu.appdata.xml /app/share/appdata"
+            ]
+        }
+    ]
+}
