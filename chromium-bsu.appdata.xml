@@ -28,5 +28,11 @@
     <screenshot>http://chromium-bsu.sourceforge.net/images/chrom-scr-112400b.jpg</screenshot>
     <screenshot>http://chromium-bsu.sourceforge.net/images/annotated.jpg</screenshot>
   </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+  </content_rating>
+  <releases>
+    <release date="2016-09-06" version="0.9.16.1" />
+  </releases>
   <updatecontact>jwrdegoede_at_fedoraproject.org</updatecontact>
 </component>
