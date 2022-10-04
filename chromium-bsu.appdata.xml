@@ -24,9 +24,9 @@
   <url type="homepage">http://chromium-bsu.sourceforge.net/</url>
   <url type="help">http://chromium-bsu.sourceforge.net/info.htm</url>
   <screenshots>
-    <screenshot type="default">http://chromium-bsu.sourceforge.net/images/chrom-scr-112400a.jpg</screenshot>
-    <screenshot>http://chromium-bsu.sourceforge.net/images/chrom-scr-112400b.jpg</screenshot>
-    <screenshot>http://chromium-bsu.sourceforge.net/images/annotated.jpg</screenshot>
+    <screenshot type="default">https://chromium-bsu.sourceforge.io/images/chrom-scr-112400a.jpg</screenshot>
+    <screenshot>https://chromium-bsu.sourceforge.io/images/chrom-scr-112400b.jpg</screenshot>
+    <screenshot>https://chromium-bsu.sourceforge.io/images/annotated.jpg</screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">moderate</content_attribute>
