@@ -19,6 +19,7 @@
     "rename-appdata-file": "chromium-bsu.appdata.xml",
     "rename-desktop-file": "chromium-bsu.desktop",
     "rename-icon": "chromium-bsu",
+    "command": "chromium-bsu",
     "modules": [
         "shared-modules/glu/glu-9.json",
         {
