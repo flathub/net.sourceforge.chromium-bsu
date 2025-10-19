@@ -4,6 +4,10 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>ClArtistic</project_license>
   <name>Chromium B.S.U.</name>
+  <developer_name>Mark B. Allan</developer_name>
+  <provides><id>net.sourceforge.chromium-bsu.desktop</id></provides>
+  <launchable type="desktop-id">net.sourceforge.chromium-bsu.desktop</launchable>
+
   <summary>Fast paced, arcade-style, top-scrolling space shooter</summary>
   <description>
     <p>
@@ -24,9 +28,18 @@
   <url type="homepage">http://chromium-bsu.sourceforge.net/</url>
   <url type="help">http://chromium-bsu.sourceforge.net/info.htm</url>
   <screenshots>
-    <screenshot type="default">https://chromium-bsu.sourceforge.io/images/chrom-scr-112400a.jpg</screenshot>
-    <screenshot>https://chromium-bsu.sourceforge.io/images/chrom-scr-112400b.jpg</screenshot>
-    <screenshot>https://chromium-bsu.sourceforge.io/images/annotated.jpg</screenshot>
+    <screenshot type="default">
+      <caption>Game screen</caption>
+      <image type="source">https://chromium-bsu.sourceforge.io/images/chrom-scr-112400a.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Game screen</caption>
+      <image type="source">https://chromium-bsu.sourceforge.io/images/chrom-scr-112400b.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Game screen</caption>
+      <image type="source">https://chromium-bsu.sourceforge.io/images/annotated.jpg</image>
+    </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">moderate</content_attribute>
@@ -34,5 +47,5 @@
   <releases>
     <release date="2016-09-06" version="0.9.16.1" />
   </releases>
-  <updatecontact>jwrdegoede_at_fedoraproject.org</updatecontact>
+  <update_contact>jwrdegoede_at_fedoraproject.org</update_contact>
 </component>

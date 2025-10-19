@@ -52,6 +52,7 @@
                 }
             ],
             "post-install": [
+                "install -Dm644 ./data/png/hero.png /app/share/icons/hicolor/128x128/apps/chromium-bsu.png",
                 "mkdir -p /app/share/appdata",
                 "cp chromium-bsu.appdata.xml /app/share/appdata"
             ]
