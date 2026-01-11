@@ -1,8 +1,12 @@
 {
-    "app-id": "net.sourceforge.chromium-bsu",
+    "id": "net.sourceforge.chromium-bsu",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
+    "rename-appdata-file": "chromium-bsu.appdata.xml",
+    "rename-desktop-file": "chromium-bsu.desktop",
+    "rename-icon": "chromium-bsu",
+    "command": "chromium-bsu",
     "finish-args": [
         "--device=dri",
         "--share=ipc",
@@ -14,12 +18,10 @@
         "/lib/pkgconfig",
         "/share/aclocal",
         "/share/man",
-        "*.la", "*.a"
+        "/share/doc",
+        "*.la",
+        "*.a"
     ],
-    "rename-appdata-file": "chromium-bsu.appdata.xml",
-    "rename-desktop-file": "chromium-bsu.desktop",
-    "rename-icon": "chromium-bsu",
-    "command": "chromium-bsu",
     "modules": [
         "shared-modules/glu/glu-9.json",
         "shared-modules/SDL2/SDL2_image.json",
@@ -49,24 +51,16 @@
                 {
                     "type": "file",
                     "path": "chromium-bsu.appdata.xml"
-                }
-            ],
-            "post-install": [
-                "mkdir -p /app/share/appdata",
-                "cp chromium-bsu.appdata.xml /app/share/appdata"
-            ]
-        },
-        {
-            "name": "icon",
-            "buildsystem": "simple",
-            "build-commands": [
-                "install -Dm644 ./net.sourceforge.chromium-bsu.png /app/share/icons/hicolor/128x128/apps/chromium-bsu.png"
-            ],
-            "sources": [
+                },
                 {
                     "type": "file",
                     "path": "net.sourceforge.chromium-bsu.png"
                 }
+            ],
+            "post-install": [
+                "mkdir -p /app/share/metainfo",
+                "cp chromium-bsu.appdata.xml /app/share/metainfo",
+                "install -Dm644 ./net.sourceforge.chromium-bsu.png /app/share/icons/hicolor/128x128/apps/chromium-bsu.png"
             ]
         }
     ]
